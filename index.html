@@ -11,27 +11,64 @@
     <h1>Hack Libs</h1>
       <form >
         <div>
-          <label for="noun1">Noun
+          <p> Nouns</p>
           <input ng-model="noun1">
+          <input ng-model="noun2">
+          <input ng-model="noun3">
+          <input ng-model="noun4">
+          <input ng-model="noun5">
+          <input ng-model="noun6">
+          <input ng-model="noun7">
         </div>
 
         <div>
-          <label for="noun1">Noun
-          <input ng-model="noun1">
+          <p>Proper Noun</p>
+          <input ng-model="properNoun1">
         <div>
+          <p>Verbs</p>
+          <input ng-model="verb1">
+          <input ng-model="verb2">
+          <input ng-model="verb3">
+          <input ng-model="verb4">
+          <input ng-model="verb5">
+          <input ng-model="verb6">
+        <div>
+
+        <div>
+          <p>Numbers</p>
+          <input ng-model="number1">
+          <input ng-model="number2">
+          <input ng-model="number3">
+        <div>
+
+        <div>
+          <p>Adjectives</p>
+          <input ng-model="adjective1">
+          <input ng-model="adjective2">
+        </div>
 
         <button ng-click="lib = !lib">Show me my Hack Lib!</button>
       </form>
+
       <div id="passage" ng-controller="PassageController" ng-show="lib">
-        <h2> One {{ noun1|capitalize }} To {{ words.verb[0] }} Them All </h2>
-        <p>{{ words.number[0] }} {{ words.noun[0] }}s for the Elven-{{ words.noun[1] }}s under the {{ words.noun[2] }},</p>
-        <p>{{ words.number[1] }} for the Dwarf-{{ words.nouns[3]}}s in halls of {{ words.noun[4] }},</p>
-        <p>{{ words.number[2]}} for {{ words.adjective[0] }} Men, doomed to {{ words.verb[1] }},</p>
-        <p>One for the {{ words.adjective[1] }} Lord on his {{ words.adjective[1] }}  {{ words.noun[5] }}</p>
-        <p>In the Land of {{ words.properNoun[0] }} where the {{ words.noun[4] }}s {{ words.verb[2] }}.</p>
-        <p>One {{ noun1 }} to {{ words.verb[0] }} them all, One {{ words.noun[0] }} to {{ words.verb[3] }} them,</p>
-        <p>One {{ words.noun[0] }} to {{ words.verb[4] }} them all and in the darkness {{ words.verb[5] }} them.</p>
-        <p>In the Land of {{ words.properNoun[0] }} where the {{ words.noun[4] }}s {{ words.verb[2] }}.</p>
+        
+        <h2> One {{ noun1|capitalize }} To {{ verb1|capitalize }} Them All </h2>
+        
+        <p>{{ number1|capitalize }} {{ noun1|capitalize }}s for the Elven-{{ noun2 }}s under the {{ noun3 }},</p>
+        
+        <p>{{ number2|capitalize }} for the Dwarf-{{ noun4 }}s in halls of {{ noun5 }},</p>
+        
+        <p>{{ number3|capitalize }} for {{ adjective1|capitalize }} Men, doomed to {{ verb2 }},</p>
+
+        <p>One for the {{ adjective2|capitalize }} Lord on his {{ adjective2 }}  {{ noun6 }}</p>
+
+        <p>In the Land of {{ properNoun1|capitalize }} where the {{ noun7|capitalize }}s {{ verb3 }}.</p>
+
+        <p>One {{ noun1 }} to {{ verb1 }} them all, One {{ noun1|capitalize }} to {{ verb4 }} them,</p>
+
+        <p>One {{ noun1|capitalize }} to {{ verb5 }} them all and in the darkness {{ verb6 }} them.</p>
+        
+        <p>In the Land of {{ properNoun1|capitalize }} where the {{ noun7|capitalize }}s {{ verb3 }}.</p>
 
     </div>
   </body>
