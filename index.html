@@ -9,8 +9,16 @@
 </head>
   <body>
     <h1>Hack Libs</h1>
-    <div id="passage">
-      <h2 ng-controller="PassageController"> This is the {{word}} </h2>
+      <div id="passage" ng-controller="PassageController">
+        <h2> One {{ words.noun[0] }} To {{ words.verb[0] }} Them All </h2>
+        <p>{{ words.number[0] }} {{ words.noun[0] }}s for the Elven-{{ words.noun[1] }}s under the {{ words.noun[2] }},</p>
+        <p>{{ words.number[1] }} for the Dwarf-{{ words.nouns[3]}}s in halls of {{ words.noun[4] }},</p>
+        <p>{{ words.number[2]}} for {{ words.adjective[0] }} Men, doomed to {{ words.verb[1] }},</p>
+        <p>One for the {{ words.adjective[1] }} Lord on his {{ words.adjective[1] }}  {{ words.noun[5] }}</p>
+        <p>In the Land of {{ words.properNoun[0] }} where the {{ words.noun[4] }}s {{ words.verb[2] }}.</p>
+        <p>One {{ words.noun[0] }} to {{ words.verb[0] }} them all, One {{ words.noun[0] }} to {{ words.verb[3] }} them,</p>
+        <p>One {{ words.noun[0] }} to {{ words.verb[4] }} them all and in the darkness {{ words.verb[5] }} them.</p>
+        <p>In the Land of {{ words.properNoun[0] }} where the {{ words.noun[4] }}s {{ words.verb[2] }}.</p>
 
     </div>
   </body>
