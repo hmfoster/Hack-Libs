@@ -1,4 +1,4 @@
-angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router'])
+angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.form'])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/prompts');
@@ -15,4 +15,7 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router'])
             controller: 'PassageController'
         });
  
-}]);
+}])
+.factory('wordData',function(){
+
+});
