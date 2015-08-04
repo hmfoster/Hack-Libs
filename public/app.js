@@ -15,7 +15,12 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
             controller: 'PassageController'
         });
  
-}])
+  }
+])
 .factory('wordData',function(){
 
 });
+
+// , function($sceProvider){
+//      $sceProvider.enabled(false);
+//    }
