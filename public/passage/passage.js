@@ -12,30 +12,43 @@ angular.module('hackLibsApp.passage', [])
   One {{ noun1|capitalize }} to {{ verb1 }} them all, One {{ noun1|capitalize }} to {{ verb4 }} them,<br>\
   One {{ noun1|capitalize }} to {{ verb5 }} them all and in the darkness {{ verb6 }} them.<br>\
     In the Land of {{ properNoun1|capitalize }} where the {{ noun7|capitalize }}s {{ verb3 }}.',
-    'words':{'noun1':'cat', 
-    'noun2':'dog',
-    'noun3':'dog',
-    'noun4':'dog',
-    'noun5':'dog',
-    'noun6':'dog',
-    'noun7':'dog',
-    'verb1':'run',
-    'verb2':'run',
-    'verb3':'run',
-    'verb4':'run',
-    'verb5':'run',
-    'verb6':'run',
-    'number1':'one',
-    'number2':'two',
-    'number3':'two',
-    'adjective1':'happy',
-    'adjective2':'sad',
-    'properNoun1':'Luna'
-  }, 
+    'words':{'nouns':{'noun1':'cat', 
+        'noun2':'dog',
+        'noun3':'dog',
+        'noun4':'dog',
+        'noun5':'dog',
+        'noun6':'dog',
+        'noun7':'dog'},
+      'verbs':{'verb1':'run',
+        'verb2':'run',
+        'verb3':'run',
+        'verb4':'run',
+        'verb5':'run',
+        'verb6':'run',},
+      'numbers':{'number1':'one',
+        'number2':'two',
+        'number3':'two',},
+      'adjectives':{'adjective1':'happy',
+        'adjective2':'sad',},
+      'properNouns':{'properNoun1':'Luna'}
+    }
   }];
-  $scope.title = $interpolate(passages[0].title)(passages[0].words);
-  $scope.passage = $sce.trustAsHtml($interpolate(passages[0].passage)(passages[0].words));
+  
+  var wordExtract = function(words){
+    var wordArr = {};
+    for(var wordType in words){
+      for(var word in words[wordType]){
+        wordArr[word]=words[wordType][word];
+      }
+    } 
+    console.log(wordArr);
+    return wordArr;
+  };
 
+  var words = wordExtract(passages[0].words);
+  $scope.title = $interpolate(passages[0].title)(words);
+  $scope.passage = $sce.trustAsHtml($interpolate(passages[0].passage)(words));
+  
 })
 //capitalize first letter of input word as needed
 .filter('capitalize', function() {
