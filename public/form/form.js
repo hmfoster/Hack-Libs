@@ -4,5 +4,5 @@ angular.module('hackLibsApp.form', [])
   $scope.wordData = wordData;
   var wordTypes = $scope.wordTypes;
   $scope.formData = wordTypes;
-  console.log($scope.wordData);
+  console.log($scope.wordTypes);
 });

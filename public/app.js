@@ -10,33 +10,37 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
       One {{ noun1|capitalize }} to {{ verb1 }} them all, One {{ noun1|capitalize }} to {{ verb4 }} them,<br>\
       One {{ noun1|capitalize }} to {{ verb5 }} them all and in the darkness {{ verb6 }} them.<br>\
       In the Land of {{ properNoun1|capitalize }} where the {{ noun7|capitalize }}s {{ verb3 }}.',
-    'wordTypes':{'nouns':7,'verbs':6, 'adjectives':2,'proper nouns':1, 'numbers':3}
+    'wordTypes':{'nouns':7,'verbs':6, 'adjectives':2,'properNouns':1, 'numbers':3}
   },{
-    'title':'The {{ noun1|capitalize }} in the {{ noun2|capitalize }}',
-    'passage':'A {{ noun1 }} {{ singularVerb1 }} a {{ noun2 }}',
-    'wordTypes':{'nouns':2,"singular verbs":1}
+    'title':'{{ firstName1 }} {{ lastName1 }} Of {{ properNoun1 }}',
+    'passage':'{{ firstName1 }} {{ lastName1 }} was {{ progressiveVerb1 }} \
+    at his {{ noun1 }} after breakfast smoking a/n \
+    {{ adverb1 }} {{ adjective1 }} wooden {{ noun2 }} that reached \
+    nearly down to his {{ adjective2 }} {{ noun3 }} \
+    ({{ adverb2 }} {{ pastTenseVerb1 }})— {{ firstName2 }} came by.',
+    'wordTypes':{'firstName': 2, 'lastName': 1, 'properNoun': 1, 'pastTenseVerb':1,'adverb':2,'noun':3,'adjective':2,'progressiveVerb':1}
   }];
 
   var passagePicker = function(){
-    return Math.floor(Math.random()*$scope.passages.length);
+    return Math.floor(Math.random()*passages.length);
   };
   var getWords = function(wordTypes){
     var types = {};
     for(var type in wordTypes){
       var group = [];
-      for(var i = wordTypes[type]; i>0; i--){
-        group.push(type.slice(0,type.length-1)+i);
-      } types[type]=group;
+      for (var i = 1; i <= wordTypes[type]; i++) {
+        group.push(type.slice(0,type.length)+i);
+      } 
+      types[type] = group;
     } return types;
   };
-  $scope.passage = passages[1];
+  $scope.passage = passages[passagePicker()];
   $scope.wordTypes = getWords($scope.passage.wordTypes);
 
 
 })
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/prompts');
- 
     $stateProvider
         .state('prompts', {
             url:'/prompts',

@@ -1,7 +1,6 @@
 <div id="passage" ng-controller="PassageController">
-  <a ui-sref="prompts"><button>Return to form</button></a>
   <h2> {{ theTitle }} </h2>
-  
   <p ng-bind-html="thePassage">{{ passage }}</p>
+  <a ui-sref="prompts"><button>Return to form</button></a>
 
 </div>
