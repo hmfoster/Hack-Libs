@@ -14,10 +14,10 @@ angular.module('hackLibsApp.passage', [])
 
   //extract words for template from wordData object from form
   var words = wordExtract(wordData);
-  var passages = $scope.passages;
-  //interpolate words into passage
-  $scope.title = $interpolate(passages[0].title)(words);
-  $scope.passage = $sce.trustAsHtml($interpolate(passages[0].passage)(words));
+  var passage = $scope.passage;
+
+  $scope.theTitle = $sce.trustAsHtml($interpolate(passage.title)(words));
+  $scope.thePassage = $sce.trustAsHtml($interpolate(passage.passage)(words));
   
 });
 

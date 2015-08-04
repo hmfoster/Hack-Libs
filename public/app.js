@@ -1,6 +1,6 @@
 angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.form'])
-.controller('AppController', function($scope){
-  $scope.passages = [{
+.controller('AppController', function($scope, $sce){
+  var passages = [{
     'title':'One {{ noun1|capitalize }} To {{ verb1|capitalize }} Them All',
     'passage': '{{ number1|capitalize }} {{ noun1 }}s for the Elven-{{ noun2 }}s under the {{ noun3 }},<br>\
       {{ number2|capitalize }} for the Dwarf-{{ noun4 }}s in halls of {{ noun5 }},<br>\
@@ -10,8 +10,16 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
       One {{ noun1|capitalize }} to {{ verb1 }} them all, One {{ noun1|capitalize }} to {{ verb4 }} them,<br>\
       One {{ noun1|capitalize }} to {{ verb5 }} them all and in the darkness {{ verb6 }} them.<br>\
       In the Land of {{ properNoun1|capitalize }} where the {{ noun7|capitalize }}s {{ verb3 }}.',
-    'wordTypes':{'nouns':7,'verbs':6, 'adjectives':2,'properNouns':1, 'numbers':3}
+    'wordTypes':{'nouns':7,'verbs':6, 'adjectives':2,'proper nouns':1, 'numbers':3}
+  },{
+    'title':'The {{ noun1|capitalize }} in the {{ noun2|capitalize }}',
+    'passage':'A {{ noun1 }} {{ singularVerb1 }} a {{ noun2 }}',
+    'wordTypes':{'nouns':2,"singular verbs":1}
   }];
+
+  var passagePicker = function(){
+    return Math.floor(Math.random()*$scope.passages.length);
+  };
   var getWords = function(wordTypes){
     var types = {};
     for(var type in wordTypes){
@@ -21,7 +29,9 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
       } types[type]=group;
     } return types;
   };
-  $scope.wordTypes = getWords($scope.passages[0].wordTypes);
+  $scope.passage = passages[1];
+  $scope.wordTypes = getWords($scope.passage.wordTypes);
+
 
 })
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
