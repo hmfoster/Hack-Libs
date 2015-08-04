@@ -10,7 +10,7 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
       One {{ noun1|capitalize }} to {{ verb1 }} them all, One {{ noun1|capitalize }} to {{ verb4 }} them,<br>\
       One {{ noun1|capitalize }} to {{ verb5 }} them all and in the darkness {{ verb6 }} them.<br>\
       In the Land of {{ properNoun1|capitalize }} where the {{ noun7|capitalize }}s {{ verb3 }}.',
-    'wordTypes':{'nouns':7,'verbs':6, 'adjectives':2,'proper nouns':1, 'numbers':3}
+    'wordTypes':{'nouns':7,'verbs':6, 'adjectives':2,'properNouns':1, 'numbers':3}
   }];
   var getWords = function(wordTypes){
     var types = {};
