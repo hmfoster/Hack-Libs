@@ -3,15 +3,15 @@ angular.module('hackLibsApp.passage', [])
 .controller('PassageController', function ($scope, $interpolate) {
   // Your code here
   var passages = [{
-    'title':'One {{ noun1 }} To {{ verb1 }} Them All',
-    'passage': '{{ number1 }} {{ noun1 }}s for the Elven-{{ noun2 }}s under the {{ noun3 }}, \
-  {{ number2 }} for the Dwarf-{{ noun4 }}s in halls of {{ noun5 }}, \
-  {{ number3 }} for {{ adjective1 }} Men, doomed to {{ verb2 }}, \
-  One for the {{ adjective2 }} Lord on his {{ adjective2 }}  {{ noun6 }} \
-  In the Land of {{ properNoun1 }} where the {{ noun7 }}s {{ verb3 }}. \
-  One {{ noun1 }} to {{ verb1 }} them all, One {{ noun1 }} to {{ verb4 }} them, \
-  One {{ noun1 }} to {{ verb5 }} them all and in the darkness {{ verb6 }} them. \
-    In the Land of {{ properNoun1 }} where the {{ noun7 }}s {{ verb3 }}.',
+    'title':'One {{ noun1|capitalize }} To {{ verb1|capitalize }} Them All',
+    'passage': '{{ number1|capitalize }} {{ noun1 }}s for the Elven-{{ noun2 }}s under the {{ noun3 }}, \
+  {{ number2|capitalize }} for the Dwarf-{{ noun4 }}s in halls of {{ noun5 }}, \
+  {{ number3|capitalize }} for {{ adjective1|capitalize }} Men, doomed to {{ verb2 }}, \
+  One for the {{ adjective2|capitalize }} Lord on his {{ adjective2 }}  {{ noun6 }} \
+  In the Land of {{ properNoun1|capitalize }} where the {{ noun7|capitalize }}s {{ verb3 }}. \
+  One {{ noun1|capitalize }} to {{ verb1 }} them all, One {{ noun1|capitalize }} to {{ verb4 }} them, \
+  One {{ noun1|capitalize }} to {{ verb5 }} them all and in the darkness {{ verb6 }} them. \
+    In the Land of {{ properNoun1|capitalize }} where the {{ noun7|capitalize }}s {{ verb3 }}.',
     'words':{'noun1':'cat', 
     'noun2':'dog',
     'noun3':'dog',
