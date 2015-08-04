@@ -48,11 +48,6 @@ angular.module('hackLibsApp.passage', [])
   $scope.passage = $sce.trustAsHtml($interpolate(passages[0].passage)(words));
   
 })
-.factory('wordTypes',function(){
-  var wordTypes = {};
-  wordTypes.types = {};
-  return wordTypes;
-})
 //capitalize first letter of input word as needed
 .filter('capitalize', function() {
   return function(input, scope) {
