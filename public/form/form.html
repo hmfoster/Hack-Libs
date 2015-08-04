@@ -1,39 +1,39 @@
 <form  ng-controller:"FormController">
   <div>
     <p> Nouns</p>
-    <input ng-model="noun1">
-    <input ng-model="noun2">
-    <input ng-model="noun3">
-    <input ng-model="noun4">
-    <input ng-model="noun5">
-    <input ng-model="noun6">
-    <input ng-model="noun7">
+    <input ng-model="wordData.nouns.noun1">
+    <input ng-model="wordData.nouns.noun2">
+    <input ng-model="wordData.nouns.noun3">
+    <input ng-model="wordData.nouns.noun4">
+    <input ng-model="wordData.nouns.noun5">
+    <input ng-model="wordData.nouns.noun6">
+    <input ng-model="wordData.nouns.noun7">
   </div>
 
   <div>
     <p>Proper Noun</p>
-    <input ng-model="properNoun1">
+    <input ng-model="wordData.properNouns.properNoun1">
   <div>
     <p>Verbs</p>
-    <input ng-model="verb1">
-    <input ng-model="verb2">
-    <input ng-model="verb3">
-    <input ng-model="verb4">
-    <input ng-model="verb5">
-    <input ng-model="verb6">
+    <input ng-model="wordData.verbs.verb1">
+    <input ng-model="wordData.verbs.verb2">
+    <input ng-model="wordData.verbs.verb3">
+    <input ng-model="wordData.verbs.verb4">
+    <input ng-model="wordData.verbs.verb5">
+    <input ng-model="wordData.verbs.verb6">
   <div>
 
   <div>
     <p>Numbers</p>
-    <input ng-model="number1">
-    <input ng-model="number2">
-    <input ng-model="number3">
+    <input ng-model="wordData.numbers.number1">
+    <input ng-model="wordData.numbers.number2">
+    <input ng-model="wordData.numbers.number3">
   <div>
 
   <div>
     <p>Adjectives</p>
-    <input ng-model="adjective1">
-    <input ng-model="adjective2">
+    <input ng-model="wordData.adjectives.adjective1">
+    <input ng-model="wordData.adjectives.adjective2">
   </div>
 
   <a ui-sref="passage"><button>Show me my Hack Lib!</button></a>

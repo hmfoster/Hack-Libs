@@ -18,9 +18,6 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
   }
 ])
 .factory('wordData',function(){
-
+  var words ={};
+  return words;
 });
-
-// , function($sceProvider){
-//      $sceProvider.enabled(false);
-//    }

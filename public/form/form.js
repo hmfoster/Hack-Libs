@@ -1,8 +1,7 @@
 angular.module('hackLibsApp.form', [])
 
-.controller('FormController', function ($scope) {
+.controller('FormController', function ($scope, wordData) {
   // Your code here
-  $scope.words = {};
-
+  $scope.wordData = wordData;
 
 });
