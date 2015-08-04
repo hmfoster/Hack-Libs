@@ -1,12 +1,9 @@
 <form  ng-controller:"FormController">
-  <div ng-repeat='(type,words) in formData'>
-     <form name='{{type}}'>
-         {{type|capitalize}}
-          <p ng-repeat='word in words'>
-            <input type='text' ng-model='wordData[type][word]'/>
-          </p>
-      </form> 
+  <div ng-repeat='(type,words) in formData' class='word-types'>
+      <p>{{type|capitalize}}<p>
+      <p ng-repeat='word in words'>
+        <input type='text' ng-model='wordData[type][word]'/>
+      </p>
   </div>
-
-  <a ui-sref="passage"><button>Show me my Hack Lib!</button></a>
-</div>
+</form>
+<a ui-sref="passage">Show me my Hack Lib!</a>

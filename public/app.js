@@ -18,7 +18,7 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
     {{ adverb1 }} {{ adjective1 }} wooden {{ noun2 }} that reached \
     nearly down to his {{ adjective2 }} {{ noun3 }} \
     ({{ adverb2 }} {{ pastTenseVerb1 }})— {{ firstName2 }} came by.',
-    'wordTypes':{'firstName': 2, 'lastName': 1, 'properNoun': 1, 'pastTenseVerb':1,'adverb':2,'noun':3,'adjective':2,'progressiveVerb':1}
+    'wordTypes':{'firstNames': 2, 'lastNames': 1, 'properNouns': 1, 'pastTenseVerbs':1,'adverbs':2,'nouns':3,'adjectives':2,'progressiveVerbs':1}
   }];
 
   var passagePicker = function(){
@@ -29,10 +29,12 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
     for(var type in wordTypes){
       var group = [];
       for (var i = 1; i <= wordTypes[type]; i++) {
-        group.push(type.slice(0,type.length)+i);
+        group.push(type.slice(0,type.length-1)+i);
       } 
       types[type] = group;
-    } return types;
+
+    } console.log(types);
+    return types;
   };
   $scope.passage = passages[passagePicker()];
   $scope.wordTypes = getWords($scope.passage.wordTypes);

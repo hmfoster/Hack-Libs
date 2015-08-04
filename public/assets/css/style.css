@@ -1,0 +1,66 @@
+body{
+  background: radial-gradient(circle, #005CB8, 70%, #001F3D);
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+main{
+  width: 85%;
+  max-width: 600px;
+  min-width: 400px;
+  height: 700px;
+  margin: 0 auto;
+  background: #2956B2;
+  background-image: url(../images/leaves.jpg);
+  color: #fff;
+  border: solid 10px #2a1506;
+  border-radius: 10px;
+  position: relative;
+}
+h1{
+  padding: 20px;
+  text-align: center;
+  font-size: 30px;
+  color: #11428C;
+}
+form, .lib{
+  text-align: center;
+  position: absolute;
+  top: 15px;
+  right: 6%;
+  padding: 15px;
+  width: 84%;
+  height: 80%;
+  margin: 60px auto;
+  background-color: rgba(256, 256, 256, 0.6);
+  overflow: auto;
+  color: #00519f;
+  border-radius: 10px;
+}
+p{
+  color: black;
+  font-size: 16px;
+}
+.word-types{
+  background-color: #F5FFE4;
+  width: 90%;
+  margin: 10px auto;
+  border:1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+a {
+  text-align: center;
+  margin-right: 10px;
+  padding: 5px;
+  position: relative;
+  top: -100px;
+  float: right;
+  width: 100px;
+  background-color: #001F3D;
+  color:white;
+  text-decoration: none;
+}
+input{
+  width: 80%;
+  font-size: 20px;
+}
