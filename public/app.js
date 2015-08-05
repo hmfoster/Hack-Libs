@@ -12,12 +12,12 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
       In the Land of {{ properNoun1|capitalize }} where the {{ noun7|capitalize }}s {{ verb3 }}.',
     'wordTypes':{'nouns':7,'verbs':6, 'adjectives':2,'properNouns':1, 'numbers':3}
   },{
-    'title':'{{ firstName1 }} {{ lastName1 }} Of {{ properNoun1 }}',
-    'passage':'{{ firstName1 }} {{ lastName1 }} was {{ progressiveVerb1 }} \
+    'title':'{{ firstName1|capitalize }} {{ lastName1|capitalize }} Of {{ properNoun1|capitalize }}',
+    'passage':'{{ firstName1|capitalize }} {{ lastName1|capitalize }} was {{ progressiveVerb1 }} \
     at his {{ noun1 }} after breakfast smoking a/n \
     {{ adverb1 }} {{ adjective1 }} wooden {{ noun2 }} that reached \
     nearly down to his {{ adjective2 }} {{ noun3 }} \
-    ({{ adverb2 }} {{ pastTenseVerb1 }})— {{ firstName2 }} came by.',
+    ({{ adverb2 }} {{ pastTenseVerb1 }})— {{ firstName2|capitalize }} came by.',
     'wordTypes':{'firstNames': 2, 'lastNames': 1, 'properNouns': 1, 'pastTenseVerbs':1,'adverbs':2,'nouns':3,'adjectives':2,'progressiveVerbs':1}
   }];
 
@@ -67,9 +67,8 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
 })
 .filter('capitalize', function() {
   return function(input, scope) {
-    if (input!==null){
-      input = input.toLowerCase();
-    }
-    return input.substring(0,1).toUpperCase()+input.substring(1);
+    var result = input.replace( /([A-Z])/g, " $1" );
+    var finalResult = result.charAt(0).toUpperCase() + result.slice(1);
+    return finalResult;
   };
 });
