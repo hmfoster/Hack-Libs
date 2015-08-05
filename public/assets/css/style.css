@@ -58,6 +58,7 @@ a {
   background-color: #001F3D;
   color:white;
   text-decoration: none;
+  border-radius: 5px;
 }
 input{
   width: 80%;

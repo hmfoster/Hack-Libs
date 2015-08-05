@@ -1,6 +1,8 @@
 angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.form'])
 .controller('AppController', function($scope, $sce, $window, $location){
-  var passages = [{
+  var passages = [
+
+  {
     'title':'One {{ noun1|capitalize }} To {{ verb1|capitalize }} Them All',
     'passage': '{{ number1|capitalize }} {{ noun1 }}s for the Elven-{{ noun2 }}s under the {{ noun3 }},<br>\
       {{ number2|capitalize }} for the Dwarf-{{ noun4 }}s in halls of {{ noun5 }},<br>\
@@ -11,7 +13,9 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
       One {{ noun1|capitalize }} to {{ verb5 }} them all and in the darkness {{ verb6 }} them.<br>\
       In the Land of {{ properNoun1|capitalize }} where the {{ noun7|capitalize }}s {{ verb3 }}.',
     'wordTypes':{'nouns':7,'verbs':6, 'adjectives':2,'properNouns':1, 'numbers':3}
-  },{
+  },
+
+  {
     'title':'{{ firstName1|capitalize }} {{ lastName1|capitalize }} Of {{ properNoun1|capitalize }}',
     'passage':'{{ firstName1|capitalize }} {{ lastName1|capitalize }} was {{ progressiveVerb1 }} \
     at his {{ noun1 }} after breakfast smoking a/n \
@@ -19,6 +23,16 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
     nearly down to his {{ adjective2 }} {{ noun3 }} \
     ({{ adverb2 }} {{ pastTenseVerb1 }})— {{ firstName2|capitalize }} came by.',
     'wordTypes':{'firstNames': 2, 'lastNames': 1, 'properNouns': 1, 'pastTenseVerbs':1,'adverbs':2,'nouns':3,'adjectives':2,'progressiveVerbs':1}
+  },
+
+  {'title':'The {{ noun1|capitalize }} King',
+  'passage':'In a {{ adjective1 }} {{ noun2 }} with {{ noun3 }}s hewn out of the \
+  {{ adjective2 }} {{ noun4 }} sat the {{ adjective3|capitalize }}king on a \
+  {{ noun5 }} of carven {{ noun6 }}. On his {{ bodyPart1 }} was a {{ noun7 }} of \
+  {{ noun8 }}s and {{ adjective4 }} leaves, for the autumn was come again. \
+  In the spring he wore a {{ noun7 }} of {{ adjective5 }} flowers. In his \
+  {{ bodyPart2}} he held a carven {{ noun9 }} of oak',
+  'wordTypes':{'nouns':9,'bodyParts':2, 'adjectives':5}
   }];
 
   var passagePicker = function(){
