@@ -1,5 +1,5 @@
 angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.form'])
-.controller('AppController', function($scope, $sce){
+.controller('AppController', function($scope, $sce, $window, $location){
   var passages = [{
     'title':'One {{ noun1|capitalize }} To {{ verb1|capitalize }} Them All',
     'passage': '{{ number1|capitalize }} {{ noun1 }}s for the Elven-{{ noun2 }}s under the {{ noun3 }},<br>\
@@ -39,6 +39,10 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
   $scope.passage = passages[passagePicker()];
   $scope.wordTypes = getWords($scope.passage.wordTypes);
 
+  $scope.newLib = function() {
+    $window.location.reload();
+    $location.path('/prompts');
+  };
 
 })
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
