@@ -1,6 +1,6 @@
 angular.module('hackLibsApp.passage', [])
 
-.controller('PassageController', function ($scope, $interpolate, $sce, wordData, wordTypes) {
+.controller('PassageController', function ($scope, $interpolate, $sce, wordData, wordTypes, $window, $location) {
 
   //-------Create passage view---------//
   var wordExtract = function(words){
@@ -18,6 +18,10 @@ angular.module('hackLibsApp.passage', [])
 
   $scope.theTitle = $sce.trustAsHtml($interpolate(passage.title)(words));
   $scope.thePassage = $sce.trustAsHtml($interpolate(passage.passage)(words));
+  $scope.newLib = function() {
+    $window.location.reload();
+    $location.path('/prompts');
+  };
   
 });
 

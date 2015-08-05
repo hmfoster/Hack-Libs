@@ -2,4 +2,6 @@
   <h2> {{ theTitle }} </h2>
   <p ng-bind-html="thePassage"></p>
 </div>
-<a ui-sref="prompts">Return to form</a>
+<a ng-click="newLib()">Give me a new one!</a>
+
+<!-- add click event to go back AND reload a new passage -->
