@@ -18,10 +18,6 @@ angular.module('hackLibsApp.passage', [])
 
   $scope.theTitle = $sce.trustAsHtml($interpolate(passage.title)(words));
   $scope.thePassage = $sce.trustAsHtml($interpolate(passage.passage)(words));
-  $scope.newLib = function() {
-    $window.location.reload();
-    $location.path('/prompts');
-  };
   
 });
 

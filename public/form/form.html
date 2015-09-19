@@ -1,9 +1,9 @@
 <form  ng-controller:"FormController">
   <div ng-repeat='(type,words) in formData' class='word-types'>
-      <p>{{type|capitalize}}<p>
-      <p ng-repeat='word in words'>
-        <input type='text' ng-model='wordData[type][word]'/>
-      </p>
+    <p>{{type|capitalize}}<p>
+    <p ng-repeat='word in words'>
+      <input type='text' ng-model='wordData[type][word]'/>
+    </p>
   </div>
 </form>
 <a class="newLib" ng-click="newLib()">Give me a new one!</a>
