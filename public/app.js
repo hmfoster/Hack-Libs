@@ -1,5 +1,6 @@
 angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.form'])
 .controller('AppController', function($scope, $sce, $window, $location){
+  //these should go into a no-sql database and assigned an id
   var passages = [
 
   {
@@ -35,19 +36,22 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
   'wordTypes':{'nouns':9,'bodyParts':2, 'adjectives':5}
   }];
 
+  //randomly choose a passage, will need to be modified to work with a databse
   var passagePicker = function(){
     return Math.floor(Math.random()*passages.length);
   };
+
   var getWords = function(wordTypes){
     var types = {};
+    var group;
     for(var type in wordTypes){
-      var group = [];
+      group = [];
       for (var i = 1; i <= wordTypes[type]; i++) {
         group.push(type.slice(0,type.length-1)+i);
       } 
       types[type] = group;
 
-    } console.log(types);
+    }
     return types;
   };
   $scope.passage = passages[passagePicker()];
@@ -74,13 +78,11 @@ angular.module('hackLibsApp', ['hackLibsApp.passage','ui.router','hackLibsApp.fo
     });
   }
 ])
-.factory('wordData',function(){
-  var words ={};
-  return words;
+.service('wordData',function(){
+  this.words = {};
 })
-.factory('wordTypes',function(){
-  var types ={};
-  return types;
+.service('wordTypes',function(){
+  this.types = {};
 })
 .filter('capitalize', function() {
   return function(input, scope) {

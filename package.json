@@ -8,7 +8,8 @@
   "dependencies": {
     "body-parser": "^1.13.3",
     "express": "~3.4.8",
-    "express-partials": "~0.2.0"
+    "express-partials": "~0.2.0",
+    "mongoose": "^4.4.12"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
